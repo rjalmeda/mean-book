@@ -1,0 +1,15 @@
+<form ng-submit="addBook()">
+    <input type="text" ng-model="book.author"><label>Author</label>
+    <input type="text" ng-model="book.title"><label>title</label>
+    <button type="submit">add book</button>
+</form>
+
+<div ng-repeat="book in books">
+    <h3>{{book.author}} - {{book.title}}</h3>
+    <form ng-submit="updateBook(book._id, bookUpdate)">
+        <input type="text" ng-model="bookUpdate.author"><label>Author</label>
+        <input type="text" ng-model="bookUpdate.title"><label>title</label>
+        <button type="submit">Update Book</button>
+        <button type="button" ng-click="removeBook(book)">remove book</button>
+    </form>
+</div>
